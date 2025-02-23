@@ -103,37 +103,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Layer_0004_Lights_0
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 123
-        width: 242
-        height: 213
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89676bbd3a236d760800000000000000
-      internalID: 7482223510269884056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Layer_0004_Lights_1
       rect:
         serializedVersion: 2
-        x: 275
-        y: 114
-        width: 342
-        height: 222
+        x: 23
+        y: 134
+        width: 594
+        height: 201
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 58dbaeb4d633d4c86ad0bc3b2bd37e1f
     internalID: 0
     vertices: []
     indices: 
