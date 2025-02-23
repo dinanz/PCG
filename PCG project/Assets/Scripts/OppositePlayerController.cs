@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections;
 
-public class playerController : MonoBehaviour
+public class OppositePlayerController : MonoBehaviour
 {
     // actual values -> inspector
     public float moveSpeed = 1f;
@@ -16,10 +15,10 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float speed = Input.GetAxis("Horizontal") * moveSpeed;
+        float speed = -Input.GetAxis("Horizontal") * moveSpeed;
         _rigidbody.linearVelocity = new Vector2(speed, _rigidbody.linearVelocity.y);
 
-        float direction = transform.localScale.x;
+        float direction = -transform.localScale.x;
         if((speed < 0 && direction > 0) || (speed > 0 && direction < 1))
         {
             transform.localScale *= new Vector2(-1, 1);
