@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class CharacterAnimation : MonoBehaviour
 {
-    // actual values -> inspector
-    public float moveSpeed = 1f;
-
     Rigidbody2D _rigidbody;
     Animator _animator;
 
@@ -13,12 +10,11 @@ public class CharacterAnimation : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-//        _animator.Play("_playerDie");
     }
 
     void FixedUpdate()
     {
-        float speed = Input.GetAxis("Horizontal") * moveSpeed;
+        float speed = Input.GetAxis("Horizontal");
         _animator.SetFloat("Speed", Mathf.Abs(speed));
 
         float direction = transform.localScale.x;
