@@ -25,4 +25,6 @@ public class playerController : MonoBehaviour
             transform.localScale *= new Vector2(-1, 1);
         }
     }
+
+    public float getSpeed() { return moveSpeed; }
 }

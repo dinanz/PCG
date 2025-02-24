@@ -13,7 +13,7 @@ public class ScrollingBackground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float movement = cam.transform.position.x * scrollingEffect;
         transform.position = new Vector3(camPosition + movement, transform.position.y, transform.position.z);
