@@ -65,6 +65,7 @@ public class NPCSelector : MonoBehaviour
         Debug.Log(currentNPC.name + " was instatiated at " + currentNPC.transform.position.x);
 
         Debug.Log("and player is at " + player.position.x + ", " + player.position.y);
+
     }
 
     void DespawnNPC()
