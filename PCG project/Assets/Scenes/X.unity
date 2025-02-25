@@ -335,6 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259414853}
   - component: {fileID: 259414852}
+  - component: {fileID: 259414854}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -356,9 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 6929400265613328229, guid: d58915fef921945f18597ef96a441b33, type: 3}
-  - {fileID: 8123658840133616905, guid: 4f4c357ec7c56409faecace1d92c7b7a, type: 3}
   cam: {fileID: 957284424}
-  spawnY: 0.35
+  spawnY: 0.3
 --- !u!4 &259414853
 Transform:
   m_ObjectHideFlags: 0
@@ -374,6 +374,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &259414854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259414851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5a1906fefa841cea63139d7ed87371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollingEffect: 0.75
+  cam: {fileID: 957284424}
 --- !u!1 &337449179
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +490,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &409530308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409530311}
+  - component: {fileID: 409530310}
+  - component: {fileID: 409530312}
+  m_Layer: 0
+  m_Name: Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &409530310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409530308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24aff6cbb7c748a5a3601d55c9649e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 6929400265613328229, guid: d58915fef921945f18597ef96a441b33, type: 3}
+  cam: {fileID: 957284424}
+  spawnY: 0.35
+--- !u!4 &409530311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409530308}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.390694, y: -1.5270741, z: 80.21789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409530312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409530308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5a1906fefa841cea63139d7ed87371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollingEffect: 0.55
+  cam: {fileID: 957284424}
 --- !u!1 &414303340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 884510688}
   - component: {fileID: 884510687}
+  - component: {fileID: 884510689}
   m_Layer: 0
   m_Name: Foilage
   m_TagString: Untagged
@@ -1537,6 +1615,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &884510689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884510686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5a1906fefa841cea63139d7ed87371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollingEffect: 0.5
+  cam: {fileID: 957284424}
 --- !u!1 &922267533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +3247,7 @@ Transform:
   m_GameObject: {fileID: 1252964685}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.28005865, y: 0.03332859, z: 85.23719}
+  m_LocalPosition: {x: 0.2801, y: 0.03332859, z: 85.23719}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5081,3 +5173,4 @@ SceneRoots:
   - {fileID: 1042097824}
   - {fileID: 884510688}
   - {fileID: 259414853}
+  - {fileID: 409530311}
