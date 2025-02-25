@@ -2,10 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FoilageSpawner : MonoBehaviour
+public class PrefabSpawner : MonoBehaviour
 {
     public GameObject[] prefabs;
     public GameObject cam;
+    public float spawnY = 0f;
 
     int[] weights = { 50, 30, 20 };
     List<GameObject> spawnedObjects = new List<GameObject>();
@@ -21,7 +22,7 @@ public class FoilageSpawner : MonoBehaviour
 
         // Spawn one so its not too empty
         GameObject selectedPrefab = prefabs[Random.Range(0, prefabs.Length)];
-        Vector3 spawnPosition = new Vector3(cam.transform.position.x, 0, 0);
+        Vector3 spawnPosition = new Vector3(cam.transform.position.x, spawnY, 0);
         GameObject spawned = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
         spawnedObjects.Add(spawned);
     }
@@ -31,14 +32,14 @@ public class FoilageSpawner : MonoBehaviour
     {
         if (Mathf.Abs(cam.transform.position.x - lastSpawnX) > spawnThreshold)
         {
-            SpawnFoliage();
+            SpawnPrefab();
             lastSpawnX = cam.transform.position.x;
         }
 
-        CleanupFoliage();
+        CleanupPrefab();
     }
 
-    void SpawnFoliage()
+    void SpawnPrefab()
     {
         float spawnDistance = Random.Range(minSpawnDistance, maxSpawnDistance);
         Vector3 spawnPosition;
@@ -46,7 +47,7 @@ public class FoilageSpawner : MonoBehaviour
         // Right
         if (cam.transform.position.x > lastSpawnX)
         {
-            spawnPosition = new Vector3(cam.transform.position.x + spawnDistance, 0, 0);
+            spawnPosition = new Vector3(cam.transform.position.x + spawnDistance, spawnY, 0);
             GameObject selectedPrefabRight = GetWeightedRandomPrefab();
 
             if (selectedPrefabRight != null)
@@ -58,7 +59,7 @@ public class FoilageSpawner : MonoBehaviour
         // Left
         else if (cam.transform.position.x < lastSpawnX)
         {
-            spawnPosition = new Vector3(cam.transform.position.x - spawnDistance, 0, 0);
+            spawnPosition = new Vector3(cam.transform.position.x - spawnDistance, spawnY, 0);
             GameObject selectedPrefabLeft = GetWeightedRandomPrefab();
 
             if (selectedPrefabLeft != null)
@@ -69,7 +70,7 @@ public class FoilageSpawner : MonoBehaviour
         }
     }
 
-    void CleanupFoliage()
+    void CleanupPrefab()
     {
         for (int i = spawnedObjects.Count - 1; i >= 0; i--)
         {
