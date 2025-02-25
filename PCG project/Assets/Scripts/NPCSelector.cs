@@ -1,8 +1,15 @@
 using UnityEngine;
 
+[System.Serializable]
+public class WeightedNPC
+{
+    public GameObject prefab;
+    public float weight = 1f;
+}
+
 public class NPCSelector : MonoBehaviour
 {
-    public GameObject[] NPCPrefabs; // Assign prefabs in the inspector
+    public WeightedNPC[] weightedNPCs; // Assign prefabs and weights in the inspector
     private GameObject currentNPC;
     public Transform player; // so we can track where to spawn NPC
 
@@ -41,14 +48,35 @@ public class NPCSelector : MonoBehaviour
 
     void SpawnRandomNPC()
     {
-        if (NPCPrefabs.Length == 0)
+        if (weightedNPCs.Length == 0)
         {
             Debug.LogError("No NPC prefabs assigned!");
             return;
         }
         
-        // Pick a random prefab
-        GameObject selectedPrefab = NPCPrefabs[Random.Range(0, NPCPrefabs.Length)];
+        // Calculate total weight
+        float totalWeight = 0f;
+        foreach (WeightedNPC npc in weightedNPCs)
+        {
+            totalWeight += npc.weight;
+        }
+
+        // Pick a random value between 0 and total weight
+        float randomValue = Random.Range(0f, totalWeight);
+        float currentWeight = 0f;
+
+        // Select prefab based on weights
+        GameObject selectedPrefab = weightedNPCs[0].prefab; // Default to first prefab
+        foreach (WeightedNPC npc in weightedNPCs)
+        {
+            currentWeight += npc.weight;
+            if (randomValue <= currentWeight)
+            {
+                selectedPrefab = npc.prefab;
+                break;
+            }
+        }
+
         float direction = Mathf.Sign(Input.GetAxisRaw("Horizontal"));
         Debug.Log(direction);
         if (direction == 0) // player isn't moving
