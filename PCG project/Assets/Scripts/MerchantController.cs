@@ -31,6 +31,7 @@ public class MerchantController : MonoBehaviour
         _player = player.GetComponent<Animator>();
         _playerChat = playerChat.GetComponent<Animator>();
         _playerChat.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -62,6 +63,7 @@ public class MerchantController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) {
             _animator.enabled = true;
+            //Debug.Log("here ");
             ResetTriggers();
             hasEntered = true;
             _animator.SetTrigger("Entered");
