@@ -151,7 +151,7 @@ TextureImporter:
         serializedVersion: 2
         x: 523
         y: 64
-        width: 227
+        width: 230
         height: 271
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -171,9 +171,9 @@ TextureImporter:
       name: Layer_0003_6_1
       rect:
         serializedVersion: 2
-        x: 750
+        x: 753
         y: 64
-        width: 178
+        width: 175
         height: 271
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
