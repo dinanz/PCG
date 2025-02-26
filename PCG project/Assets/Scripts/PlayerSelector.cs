@@ -22,6 +22,6 @@ public class PlayerSelector : MonoBehaviour
         GameObject selectedPrefab = playerPrefabs[Random.Range(0, playerPrefabs.Length)];
 
         // Instantiate at a chosen position (adjust as needed)
-        currentPlayer = Instantiate(selectedPrefab, Vector3.zero, Quaternion.identity);
+        currentPlayer = Instantiate(selectedPrefab, transform.position, Quaternion.identity);
     }
 }
