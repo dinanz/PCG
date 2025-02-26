@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6379116640423904378}
   - component: {fileID: 3226552096830715173}
   - component: {fileID: 2153423299081984774}
-  - component: {fileID: 2175468333572748069}
-  - component: {fileID: 4183474007940619610}
+  - component: {fileID: -3716704062316547176}
+  - component: {fileID: 4448977311703986745}
   m_Layer: 5
   m_Name: BlackCat
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.28, y: -1.302, z: -0.026158}
-  m_LocalScale: {x: 1.8677009, y: 1.8677009, z: 1.8677009}
+  m_LocalScale: {x: -1.8677009, y: 1.8677009, z: 1.8677009}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -214,7 +214,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2175468333572748069
+--- !u!114 &-3716704062316547176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac1f282df3b0403d84c10ee5937456b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
---- !u!114 &4183474007940619610
+  moveSpeed: 2
+--- !u!114 &4448977311703986745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,7 +236,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1414011448931768613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385f910532bf0473cbbb557d83779d6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 260644a8919904ae29589a1a708052b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
