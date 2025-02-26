@@ -14,7 +14,7 @@ public class NPCSelector : MonoBehaviour
     public Transform player;
 
     private float minSpawn = 5f;
-    private float maxSpawn = 15f; 
+    private float maxSpawn = 10f; 
     private float nextSpawnDistance;
     private float lastSpawnX;
     private float despawnDistance = 25f;

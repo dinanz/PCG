@@ -4,7 +4,7 @@ using System.Collections;
 public class playerController : MonoBehaviour
 {
     // actual values -> inspector
-    public float moveSpeed = 1f;
+    public float moveSpeed = 2f;
 
     Rigidbody2D _rigidbody;
 
