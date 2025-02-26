@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7475834219676890215}
   - component: {fileID: 6685769698966176965}
   - component: {fileID: 2807721283780761119}
-  - component: {fileID: -161251158797607663}
-  - component: {fileID: 7382730796424651036}
+  - component: {fileID: -8925001308300943826}
+  - component: {fileID: 250410944577520264}
   m_Layer: 0
   m_Name: GreyCat
   m_TagString: Untagged
@@ -187,7 +187,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.14053783, y: 0.11986084}
   m_EdgeRadius: 0
---- !u!114 &-161251158797607663
+--- !u!114 &-8925001308300943826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,10 +196,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8021978554876381135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 260644a8919904ae29589a1a708052b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 385f910532bf0473cbbb557d83779d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7382730796424651036
+  moveSpeed: 1
+--- !u!114 &250410944577520264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +209,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8021978554876381135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dac1f282df3b0403d84c10ee5937456b, type: 3}
+  m_Script: {fileID: 11500000, guid: 896e604a0afaf4f5497266a6cb07c1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2

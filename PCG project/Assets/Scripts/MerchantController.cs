@@ -5,9 +5,7 @@ public class MerchantController : MonoBehaviour
 {
     public GameObject chatBox;
     public GameObject mushroom;
-    public GameObject player;
-    public GameObject playerChat;
-    public playerController _playerController;
+    public GameObject instructions;
 
     bool hasEntered;
     bool isWelcomed;
@@ -18,6 +16,9 @@ public class MerchantController : MonoBehaviour
     Animator _player;
     Animator _playerChat;
     SpriteRenderer _mushroom;
+    GameObject _playerChatBox;
+    playerController _playerController;
+    PlayerSelector playerSelector;
 
     int welcomeWeight = 70;
     int refuseWeight = 30;
@@ -28,9 +29,12 @@ public class MerchantController : MonoBehaviour
         _animator.enabled = false;
         _mushroom = mushroom.GetComponent<SpriteRenderer>();
         _mushroom.enabled = false;
-        _player = player.GetComponent<Animator>();
-        _playerChat = playerChat.GetComponent<Animator>();
+        playerSelector = FindObjectOfType<PlayerSelector>();
+        _player = playerSelector.getPlayer().GetComponent<Animator>();
+        _playerChatBox = playerSelector.getPlayerChat();
+        _playerChat = playerSelector.getPlayerChat().GetComponent<Animator>();
         _playerChat.enabled = false;
+        _playerController = playerSelector.getPlayerController();
     }
 
     // Update is called once per frame
@@ -65,6 +69,7 @@ public class MerchantController : MonoBehaviour
             ResetTriggers();
             hasEntered = true;
             _animator.SetTrigger("Entered");
+            instructions.SetActive(true);
         }
     }
 
@@ -74,6 +79,7 @@ public class MerchantController : MonoBehaviour
             _mushroom.enabled = false;
             hasEntered = false;
             _animator.SetTrigger("Exited");
+            instructions.SetActive(false);
         }
     }
 
@@ -121,15 +127,17 @@ public class MerchantController : MonoBehaviour
         _playerController.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         _playerController.enabled = false;
         _player.SetTrigger("Die");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
+        _playerChatBox.SetActive(true);
         _playerChat.enabled = true;
         _playerChat.SetTrigger("Speechless");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         _playerChat.SetTrigger("Exit");
         yield return new WaitForSeconds(2f);
         _player.SetTrigger("Spawn");
         yield return new WaitForSeconds(1.5f);
         _playerController.enabled = true;
+        _playerChatBox.SetActive(false);
         hasMushroom = false;
     }
 
